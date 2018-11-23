@@ -24,6 +24,7 @@ void setup() {
   rightEyeX = width*3/4;
   rightEyeY = height/4;
   eyeDiameter = width/8;
+  
   ellipse(faceX, faceY, width, width); //Face
   ellipse(leftEyeX, leftEyeY, eyeDiameter, eyeDiameter); //Left Eye
   ellipse(rightEyeX, rightEyeY, eyeDiameter, eyeDiameter); //Rigtht Eye
@@ -34,19 +35,19 @@ void setup() {
   strokeWeight(1);
   triangle(width*2/4, height*1/3, width*3/4, height*2/3, width*1/4, height*3/4); //nose, broken a little, only place for this formulae
   measlesDiamter = width*1/60; //Other measles varaibles need to be in draw()
+  buttonRectangle();
 }
 
 void draw() {
   
   //Arithmetic First
-  measlesX = random(width);
-  measlesY = random(height);
+  measlesArithmetic();
+  
+   drawMeasles();
+  
   
   //Drawing Second
-  fill(red); 
-  noStroke();
-  ellipse(measlesX, measlesY, measlesDiamter, measlesDiamter);
-  stroke(1);
+
   fill(white); //White, resetts fill to default
   ellipse(leftEyeX, leftEyeY, eyeDiameter, eyeDiameter);
    ellipse(rightEyeX, rightEyeY, eyeDiameter, eyeDiameter);
